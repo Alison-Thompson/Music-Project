@@ -1,0 +1,18 @@
+Finish classical generator. Priority level High.
+Add rock generator. Priority level High.
+Add blues generator. Priority level High.
+Add country generator. Priority level High.
+
+Create login page. Priority level Mid.
+Make login functional. Make users.  Priority level Mid.
+
+Make users be able to save generated progressions. Priority level Mid.
+Make users be able to edit saved and unsaved progressions.  Priority level Low.
+Make recommended possible changes while editing progressions.  Priority level Low.
+
+Make generated progressions playable as music. Priority level Low.
+
+Make everything look polished. Priority level High.
+
+
+Add more as needed.
