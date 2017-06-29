@@ -1,45 +1,4 @@
-var musicalAlphabet = ["A","B","C","D","E","F","G"];
-var one   = 0;
-var two   = 1;
-var three = 2;
-var four  = 3;
-var five  = 4;
-var six   = 5;
-var seven = 6;
-
-var changeAlphabetToKey = function (key) { // Makes the musicalAlphabet match the key
-	for (var i = 0; i < musicalAlphabet.length; i++) {
-		if (musicalAlphabet[0] === key.toUpperCase()) {
-			break;
-		}
-		else {
-			musicalAlphabet.push(musicalAlphabet.shift());
-		}
-	}
-};
-
-var changeAlphabetToMode = function (mode) {  // Changes musicalAlphabet to mode. Major, minor, dorian ext.
-	switch(mode.toLowerCase()) {              // Must be done after switchAlphabetToKey()
-		case "major":
-			musicalAlphabet[two] = musicalAlphabet[two]+"m";
-			musicalAlphabet[three] = musicalAlphabet[three]+"m";
-			musicalAlphabet[six] = musicalAlphabet[six]+"m";
-			musicalAlphabet[seven] = musicalAlphabet[seven]+"dim";
-			break;
-		case "minor":
-			musicalAlphabet[one] = musicalAlphabet[one]+"m";
-			musicalAlphabet[two] = musicalAlphabet[two]+"dim";
-			musicalAlphabet[four] = musicalAlphabet[four]+"m";
-			musicalAlphabet[five] = musicalAlphabet[five]+"m";
-			break;
-		default:
-			console.log("Default hit in switch block!\n" +
-						"javascript/generator.js - changeAlphabetToMode function");
-
-	} 
-}
-
-var classicalV2 = function (mode) { // In use. Generates a classical chord progression.
+classicalV2 = function (mode) { // In use. Generates a classical chord progression.
 	var progression = [];
 
 	if (mode.toLowerCase() === "major") {
@@ -123,7 +82,7 @@ var classicalV2 = function (mode) { // In use. Generates a classical chord progr
 	}
 };
 
-var classicalV1 = function (mode) { // Not in use.
+classicalV1 = function (mode) { // Not in use.
 	var progression = [];
 
 	if (mode === "major") {
@@ -227,26 +186,3 @@ var classicalV1 = function (mode) { // Not in use.
 		}
 	}
 };
-
-
-var main = function (genre, mode, key) {
-	changeAlphabetToKey(key);
-	changeAlphabetToMode(mode);
-
-	if (genre === "classical") {
-		console.log(classicalV2(mode));
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
