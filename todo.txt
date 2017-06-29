@@ -1,6 +1,6 @@
 Finish classical generator. Priority level High. done
 Add rock generator. Priority level High.
-Add blues generator. Priority level High.
+Add blues generator. Priority level High. done
 Add country generator. Priority level High.
 
 Create login page. Priority level Mid.
