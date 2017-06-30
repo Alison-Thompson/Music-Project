@@ -21,7 +21,7 @@ changeAlphabetToKey = function (key) { // Makes the musicalAlphabet match the ke
 };
 
 changeAlphabetToMode = function (mode) {  // Changes musicalAlphabet to mode. Major, minor, dorian ext.
-	switch(mode.toLowerCase()) {              // Must be done after switchAlphabetToKey()
+	switch(mode.toLowerCase()) {          // Must be done after switchAlphabetToKey()
 		case "major":
 			musicalAlphabet[two] = musicalAlphabet[two]+"m";
 			musicalAlphabet[three] = musicalAlphabet[three]+"m";
@@ -38,5 +38,32 @@ changeAlphabetToMode = function (mode) {  // Changes musicalAlphabet to mode. Ma
 			console.log("Default hit in switch block!\n" +
 						"javascript/generator.js - changeAlphabetToMode function");
 
-	} 
-}
+	}
+};
+
+isModeChanged = function () { // Returns true if the mode has changed to major or minor, false otherwise.
+	if (	(musicalAlphabet[one].length   > 1) ||
+			(musicalAlphabet[two].length   > 1) ||
+			(musicalAlphabet[three].length > 1) ||
+			(musicalAlphabet[four].length  > 1) ||
+			(musicalAlphabet[five].length  > 1) ||
+			(musicalAlphabet[six].length   > 1) ||
+			(musicalAlphabet[seven].length > 1)) {
+		return true;
+	} else {
+		return false;
+	}
+};
+
+removeMode = function () { // Removes the current mode.
+	musicalAlphabet[one]   = musicalAlphabet[one].charAt(0);
+	musicalAlphabet[two]   = musicalAlphabet[two].charAt(0);
+	musicalAlphabet[three] = musicalAlphabet[three].charAt(0);
+	musicalAlphabet[four]  = musicalAlphabet[four].charAt(0);
+	musicalAlphabet[five]  = musicalAlphabet[five].charAt(0);
+	musicalAlphabet[six]   = musicalAlphabet[six].charAt(0);
+	musicalAlphabet[seven] = musicalAlphabet[seven].charAt(0);
+};
+
+
+
