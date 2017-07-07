@@ -1,18 +1,25 @@
-files = { 'G':'./resources/sound-files/gMajor.wav',
-          'Am':'./resources/sound-files/aMinor.wav'};
+SoundManager = function() {
+  this.currentProgression = [];
+  this.iterator;
 
-doSetTimeout = function (iterator, progression) {
+  this.files = {  'G':'./resources/sound-files/gMajor.wav',
+                  'Am':'./resources/sound-files/aMinor.wav'};
+};
+
+
+SoundManager.prototype.doSetTimeout = function (iterator, progression) {
   setTimeout(function() {
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', files[progression[iterator]]);
     audioElement.play();
     console.log(files[progression[iterator]]);
   },iterator*3000);
-}
+};
 
-PlaySound = function (progression) {
+SoundManager.prototype.PlaySound = function (progression) {
     for (iterator=0; iterator < progression.length; iterator++) {
       doSetTimeout(iterator, progression);
     }
-}
+};
 
+soundManager = new SoundManager();

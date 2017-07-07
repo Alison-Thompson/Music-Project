@@ -2,21 +2,11 @@
 
 // for alphabet.js
 
-var musicalAlphabet = [];
-
-var one;
-var two;
-var three;
-var four;
-var five;
-var six;
-var seven;
+var alphabet;
 
 // for soundManager.js
 
-var files = {};
-var currentProgression = [];
-var iterator;
+var soundManager;
 
 // Miscellaneous functions
 
@@ -29,12 +19,24 @@ var blues = function(){};
 
 // for alphabet.js
 
-var changeAlphabetToMode = function(){};
-var changeAlphabetToKey = function(){};
-var isModeChanged = function(){};
-var removeMode = function(){};
+var alphabet = function(){};
 
 // for soundManager.js
 
-var doSetTimeout = function(){};
-var PlaySound = function(){};
+var soundManager = function(){};
+
+// for progression.js
+
+var Progression = function(){};
+
+// for chord.js
+
+var Chord = function(){};
+
+// for createProgression.js
+
+var createProgression = function(){};
+
+// for loadProgression.js
+
+var loadProgression = function(){};

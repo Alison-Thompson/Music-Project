@@ -1,22 +1,19 @@
 initalizeGenerators = function (genre, mode, key) {
 
-	changeAlphabetToKey(key);
+	alphabet.changeAlphabetToKey(key);
 
-	if (isModeChanged()) {
-		if ((musicalAlphabet[one].length > 1) && !(mode === minor)) {
-			removeMode();
-			changeAlphabetToMode(mode);
+	if (alphabet.isModeChanged()) {
+		if ((alphabet.musicalAlphabet[alphabet.one].length > 1) && !(mode === minor)) {
+			alphabet.removeMode();
+			alphabet.changeAlphabetToMode(mode);
 		}
 	} else {
-		changeAlphabetToMode(mode);
+		alphabet.changeAlphabetToMode(mode);
 	}
 
 	if (genre === "classical") {
-		return classicalV2(mode);
+		return createProgression(classicalV2(mode));
 	} else if (genre === "blues") {
-		return blues()
+		return createProgression(blues())
 	}
 };
-
-
-

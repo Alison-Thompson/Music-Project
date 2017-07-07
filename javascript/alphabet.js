@@ -1,38 +1,40 @@
-musicalAlphabet = ["A","B","C","D","E","F","G"];
+Alphabet = function () {
+	this.musicalAlphabet = ["A","B","C","D","E","F","G"];
 
-one   = 0;
-two   = 1;
-three = 2;
-four  = 3;
-five  = 4;
-six   = 5;
-seven = 6;
- 
+	this.one   = 0;
+	this.two   = 1;
+	this.three = 2;
+	this.four  = 3;
+	this.five  = 4;
+	this.six   = 5;
+	this.seven = 6;
+};
 
-changeAlphabetToKey = function (key) { // Makes the musicalAlphabet match the key
-	for (var i = 0; i < musicalAlphabet.length; i++) {
-		if (musicalAlphabet[0] === key.toUpperCase()) {
+
+Alphabet.prototype.changeAlphabetToKey = function (key) { // Makes the musicalAlphabet match the key
+	for (var i = 0; i < this.musicalAlphabet.length; i++) {
+		if (this.musicalAlphabet[0] === key.toUpperCase()) {
 			break;
 		}
 		else {
-			musicalAlphabet.push(musicalAlphabet.shift());
+			this.musicalAlphabet.push(this.musicalAlphabet.shift());
 		}
 	}
 };
 
-changeAlphabetToMode = function (mode) {  // Changes musicalAlphabet to mode. Major, minor, dorian ext.
+Alphabet.prototype.changeAlphabetToMode = function (mode) {  // Changes musicalAlphabet to mode. Major, minor, dorian ext.
 	switch(mode.toLowerCase()) {          // Must be done after switchAlphabetToKey()
 		case "major":
-			musicalAlphabet[two] = musicalAlphabet[two]+"m";
-			musicalAlphabet[three] = musicalAlphabet[three]+"m";
-			musicalAlphabet[six] = musicalAlphabet[six]+"m";
-			musicalAlphabet[seven] = musicalAlphabet[seven]+"dim";
+			this.musicalAlphabet[this.two] = this.musicalAlphabet[this.two]+"m";
+			this.musicalAlphabet[this.three] = this.musicalAlphabet[this.three]+"m";
+			this.musicalAlphabet[this.six] = this.musicalAlphabet[this.six]+"m";
+			this.musicalAlphabet[this.seven] = this.musicalAlphabet[this.seven]+"dim";
 			break;
 		case "minor":
-			musicalAlphabet[one] = musicalAlphabet[one]+"m";
-			musicalAlphabet[two] = musicalAlphabet[two]+"dim";
-			musicalAlphabet[four] = musicalAlphabet[four]+"m";
-			musicalAlphabet[five] = musicalAlphabet[five]+"m";
+			this.musicalAlphabet[this.one] = this.musicalAlphabet[this.one]+"m";
+			this.musicalAlphabet[this.two] = this.musicalAlphabet[this.two]+"dim";
+			this.musicalAlphabet[this.four] = this.musicalAlphabet[this.four]+"m";
+			this.musicalAlphabet[this.five] = this.musicalAlphabet[this.five]+"m";
 			break;
 		default:
 			console.log("Default hit in switch block!\n" +
@@ -41,29 +43,28 @@ changeAlphabetToMode = function (mode) {  // Changes musicalAlphabet to mode. Ma
 	}
 };
 
-isModeChanged = function () { // Returns true if the mode has changed to major or minor, false otherwise.
-	if (	(musicalAlphabet[one].length   > 1) ||
-			(musicalAlphabet[two].length   > 1) ||
-			(musicalAlphabet[three].length > 1) ||
-			(musicalAlphabet[four].length  > 1) ||
-			(musicalAlphabet[five].length  > 1) ||
-			(musicalAlphabet[six].length   > 1) ||
-			(musicalAlphabet[seven].length > 1)) {
+Alphabet.prototype.isModeChanged = function () { // Returns true if the mode has changed to major or minor, false otherwise.
+	if (	(this.musicalAlphabet[this.one].length   > 1) ||
+			(this.musicalAlphabet[this.two].length   > 1) ||
+			(this.musicalAlphabet[this.three].length > 1) ||
+			(this.musicalAlphabet[this.four].length  > 1) ||
+			(this.musicalAlphabet[this.five].length  > 1) ||
+			(this.musicalAlphabet[this.six].length   > 1) ||
+			(this.musicalAlphabet[this.seven].length > 1)) {
 		return true;
 	} else {
 		return false;
 	}
 };
 
-removeMode = function () { // Removes the current mode.
-	musicalAlphabet[one]   = musicalAlphabet[one].charAt(0);
-	musicalAlphabet[two]   = musicalAlphabet[two].charAt(0);
-	musicalAlphabet[three] = musicalAlphabet[three].charAt(0);
-	musicalAlphabet[four]  = musicalAlphabet[four].charAt(0);
-	musicalAlphabet[five]  = musicalAlphabet[five].charAt(0);
-	musicalAlphabet[six]   = musicalAlphabet[six].charAt(0);
-	musicalAlphabet[seven] = musicalAlphabet[seven].charAt(0);
+Alphabet.prototype.removeMode = function () { // Removes the current mode.
+	this.musicalAlphabet[this.one]   = this.musicalAlphabet[this.one].charAt(0);
+	this.musicalAlphabet[this.two]   = this.musicalAlphabet[this.two].charAt(0);
+	this.musicalAlphabet[this.three] = this.musicalAlphabet[this.three].charAt(0);
+	this.musicalAlphabet[this.four]  = this.musicalAlphabet[this.four].charAt(0);
+	this.musicalAlphabet[this.five]  = this.musicalAlphabet[this.five].charAt(0);
+	this.musicalAlphabet[this.six]   = this.musicalAlphabet[this.six].charAt(0);
+	this.musicalAlphabet[this.seven] = this.musicalAlphabet[this.seven].charAt(0);
 };
 
-
-
+alphabet = new Alphabet();

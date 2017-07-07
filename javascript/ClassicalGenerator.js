@@ -3,79 +3,79 @@ classicalV2 = function (mode) { // In use. Generates a classical chord progressi
 
 	if (mode.toLowerCase() === "major") {
 
-		var options = [musicalAlphabet[three],musicalAlphabet[six],
-				   musicalAlphabet[two],  musicalAlphabet[four]];
+		var options = [alphabet.musicalAlphabet[alphabet.three],alphabet.musicalAlphabet[alphabet.six],
+				   alphabet.musicalAlphabet[alphabet.two],  alphabet.musicalAlphabet[alphabet.four]];
 
-		var current = musicalAlphabet[one];
+		var current = alphabet.musicalAlphabet[alphabet.one];
 
 		while (true) {
-			if (current === musicalAlphabet[one]) {
+			if (current === alphabet.musicalAlphabet[alphabet.one]) {
 				progression.push(current);
 				current = options[Math.floor(Math.random() * 4)];
-			} else if ((current === musicalAlphabet[two]) || 
-						current === musicalAlphabet[four]) {
+			} else if ((current === alphabet.musicalAlphabet[alphabet.two]) || 
+						current === alphabet.musicalAlphabet[alphabet.four]) {
 				progression.push(current);
 
 				if (Math.floor(Math.random() * 2) === 0) {
-					current = musicalAlphabet[five];	
+					current = alphabet.musicalAlphabet[alphabet.five];
 				} else {
-					current = musicalAlphabet[seven];
+					current = alphabet.musicalAlphabet[alphabet.seven];
 				}
-			} else if (current === musicalAlphabet[six]) {
+			} else if (current === alphabet.musicalAlphabet[alphabet.six]) {
 				progression.push(current);
 				if (Math.floor(Math.random() * 2) === 0) {
-					current = musicalAlphabet[two];	
+					current = alphabet.musicalAlphabet[alphabet.two];
 				} else {
-					current = musicalAlphabet[four];
+					current = alphabet.musicalAlphabet[alphabet.four];
 				}
-			} else if (current === musicalAlphabet[three]) {
+			} else if (current === alphabet.musicalAlphabet[alphabet.three]) {
 				progression.push(current);
-				current = musicalAlphabet[six];
+				current = alphabet.musicalAlphabet[alphabet.six];
 			} else {
 				progression.push(current);
-				current = musicalAlphabet[one];
+				current = alphabet.musicalAlphabet[alphabet.one];
 			}
-			if ((current === musicalAlphabet[one]) && (progression.length > 8)) {
+			if ((current === alphabet.musicalAlphabet[alphabet.one]) && (progression.length > 8)) {
 				return progression;
 			}
 		}
 	} else if (mode.toLowerCase() === "minor") { // needs work.
-		var options = [musicalAlphabet[seven], musicalAlphabet[three],
-				   musicalAlphabet[six]];
+		var options = [alphabet.musicalAlphabet[alphabet.seven], alphabet.musicalAlphabet[alphabet.three],
+				   alphabet.musicalAlphabet[alphabet.six]];
 
-		var current = musicalAlphabet[one];
+		var current = alphabet.musicalAlphabet[alphabet.one];
 
 		while(true) {
 
-			if (current === musicalAlphabet[seven]) {
+			if (current === alphabet.musicalAlphabet[alphabet.seven]) {
 				progression.push(current);
-				current = musicalAlphabet[three];
-			} else if (current === musicalAlphabet[three]) {
+				current = alphabet.musicalAlphabet[alphabet.three];
+			} else if (current === alphabet.musicalAlphabet[alphabet.three]) {
 				progression.push(current);
-				current = musicalAlphabet[six];
-			} else if (current === musicalAlphabet[six]) {
+				current = alphabet.musicalAlphabet[alphabet.six];
+			} else if (current === alphabet.musicalAlphabet[alphabet.six]) {
 				progression.push(current);
 				var randomNum = Math.floor(Math.random * 2);
 				if (randomNum === 0) {
-					current = musicalAlphabet[two];
+					current = alphabet.musicalAlphabet[alphabet.two];
 				} else {
-					current = musicalAlphabet[four];
+					current = alphabet.musicalAlphabet[alphabet.four];
 				}
-			} else if (current === musicalAlphabet[one]) {
+			} else if (current === alphabet.musicalAlphabet[alphabet.one]) {
 				progression.push(current);
 				current = options[Math.floor(Math.random() * 3)];
-			} else if (current === musicalAlphabet[two] ||
-					   current === musicalAlphabet[four]) {
+			} else if (current === alphabet.musicalAlphabet[alphabet.two] ||
+					   current === alphabet.musicalAlphabet[alphabet.four]) {
 				progression.push(current);
 				var randomNum = Math.floor(Math.random * 2);
-				current = musicalAlphabet[five];
-				
+				current = alphabet.musicalAlphabet[alphabet.five];
+
 			} else {
 				progression.push(current);
-				current = musicalAlphabet[one];
+				current = alphabet.musicalAlphabet[alphabet.one];
 			}
 
-			if ((current === musicalAlphabet[one]) && (progression.length > 8)) {
+			if ((current === alphabet.musicalAlphabet[alphabet.one]) && (progression.length > 8)) {
 				return progression;
 			}
 		}
@@ -86,99 +86,99 @@ classicalV1 = function (mode) { // Not in use.
 	var progression = [];
 
 	if (mode === "major") {
-		options = [musicalAlphabet[three],musicalAlphabet[six],
-				   musicalAlphabet[two],  musicalAlphabet[four]];
+		options = [alphabet.musicalAlphabet[alphabet.three],alphabet.musicalAlphabet[alphabet.six],
+				   alphabet.musicalAlphabet[alphabet.two],  alphabet.musicalAlphabet[alphabet.four]];
 
-		current = musicalAlphabet[one];
+		current = alphabet.musicalAlphabet[alphabet.one];
 		while (true) {
 			switch(current) {
-				case musicalAlphabet[one]:
+				case alphabet.musicalAlphabet[alphabet.one]:
 					progression.push(current);
 					current = options[Math.floor(Math.random() * 4)];
-				case current = musicalAlphabet[two]:
-				case musicalAlphabet[four]:
+				case current = alphabet.musicalAlphabet[alphabet.two]:
+				case alphabet.musicalAlphabet[alphabet.four]:
 					progression.push(current);
 
 					if (Math.floor(Math.random() * 2) === 0) {
-						current = musicalAlphabet[five];	
+						current = alphabet.musicalAlphabet[alphabet.five];
 					} else {
-						current = musicalAlphabet[seven];
-					}				
-					break;
-				case musicalAlphabet[three]:
-					progression.push(current);
-					current = musicalAlphabet[six];
-					break;
-				case musicalAlphabet[six]:
-					progression.push(current);
-					if (Math.floor(Math.random() * 2) === 0) {
-						current = musicalAlphabet[two];	
-					} else {
-						current = musicalAlphabet[four];
+						current = alphabet.musicalAlphabet[alphabet.seven];
 					}
 					break;
-				case musicalAlphabet[five]:
-				case musicalAlphabet[seven]:
+				case alphabet.musicalAlphabet[alphabet.three]:
 					progression.push(current);
-					current = musicalAlphabet[one];
+					current = alphabet.musicalAlphabet[alphabet.six];
+					break;
+				case alphabet.musicalAlphabet[alphabet.six]:
+					progression.push(current);
+					if (Math.floor(Math.random() * 2) === 0) {
+						current = alphabet.musicalAlphabet[alphabet.two];
+					} else {
+						current = alphabet.musicalAlphabet[alphabet.four];
+					}
+					break;
+				case alphabet.musicalAlphabet[alphabet.five]:
+				case alphabet.musicalAlphabet[alphabet.seven]:
+					progression.push(current);
+					current = alphabet.musicalAlphabet[alphabet.one];
 					break;
 				default:
 					console.log("Default hit in switch block!\n" +
 						  "javascript/generator.js - classical function Major");
 			}
-			if ((current === musicalAlphabet[one]) && (progression.length > 8)) {
-				progression.unshift(musicalAlphabet[one]);
+			if ((current === alphabet.musicalAlphabet[alphabet.one]) && (progression.length > 8)) {
+				progression.unshift(alphabet.musicalAlphabet[alphabet.one]);
 				progression.shift();
 				return progression;
 				break;
 			}
 		}
 	} else if (mode === "minor") {
-		progression.push(musicalAlphabet(one));
+		progression.push(alphabet.musicalAlphabet(alphabet.one));
 
-		options = [musicalAlphabet[seven], musicalAlphabet[three],
-				   musicalAlphabet[six]];
+		options = [alphabet.musicalAlphabet[alphabet.seven], alphabet.musicalAlphabet[alphabet.three],
+				   alphabet.musicalAlphabet[alphabet.six]];
 
 		current = options[Math.floor(Math.random * 4)];
 		while (true) {
 			switch(current) {
-				case musicalAlphabet[seven]:
+				case alphabet.musicalAlphabet[alphabet.seven]:
 					progression.push(current);
-					current = musicalAlphabet[three];
+					current = alphabet.musicalAlphabet[alphabet.three];
 					break;
-				case musicalAlphabet[three]:
+				case alphabet.musicalAlphabet[alphabet.three]:
 					progression.push(current);
-					current = musicalAlphabet[six];
+					current = alphabet.musicalAlphabet[alphabet.six];
 					break;
-				case musicalAlphabet[six]:
+				case alphabet.musicalAlphabet[alphabet.six]:
 					progression.push(current);
 					var randomNum = Math.floor(Math.random * 2);
 					if (randomNum === 0) {
-						current = musicalAlphabet[two];
+						current = alphabet.musicalAlphabet[alphabet.two];
 					} else {
-						current = musicalAlphabet[four];
+						current = alphabet.musicalAlphabet[alphabet.four];
 					}
 					break;
-				case musicalAlphabet[two]:
-				case musicalAlphabet[four]:
+				case alphabet.musicalAlphabet[alphabet.two]:
+				case alphabet.musicalAlphabet[alphabet.four]:
 					progression.push(current);
 					var randomNum = Math.floor(Math.random * 2);
 					if (randomNum === 0) {
-						current = musicalAlphabet[five];
+						current = alphabet.musicalAlphabet[alphabet.five];
 					} else {
-						current = musicalAlphabet[seven] + " dim"; // dim
+						current = alphabet.musicalAlphabet[alphabet.seven] + " dim"; // dim
 					break;
 					}
-				case musicalAlphabet[five]:
-				case musicalAlphabet[seven] + " dim": // dim
+				case alphabet.musicalAlphabet[alphabet.five]:
+				case alphabet.musicalAlphabet[alphabet.seven] + " dim": // dim
 					progression.push(current);
-					current = musicalAlphabet[one];
+					current = alphabet.musicalAlphabet[alphabet.one];
 					break;
 				default:
 					alert("Default hit in switch block!\n" +
 						  "javascript/generator.js - classical function Minor");
 			}
-			if ((current === musicalAlphabet[one]) && (progression.length > 8)) {
+			if ((current === alphabet.musicalAlphabet[alphabet.one]) && (progression.length > 8)) {
 				shift();
 				return progression;
 				break;

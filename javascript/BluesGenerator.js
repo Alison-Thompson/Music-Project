@@ -5,38 +5,38 @@ blues = function () {
 
 	switch(randomNum) {
 		case 0:
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[four]);
-			progression.push(musicalAlphabet[four]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[five]);
-			progression.push(musicalAlphabet[five]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.four]);
+			progression.push(alphabet.musicalAlphabet[alphabet.four]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.five]);
+			progression.push(alphabet.musicalAlphabet[alphabet.five]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
 			break;
 		case 1:
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[five]);
-			progression.push(musicalAlphabet[four]);
-			progression.push(musicalAlphabet[four]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[five]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[five]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.five]);
+			progression.push(alphabet.musicalAlphabet[alphabet.four]);
+			progression.push(alphabet.musicalAlphabet[alphabet.four]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.five]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.five]);
 			break;
 		case 2:
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[four]);
-			progression.push(musicalAlphabet[five]);
-			progression.push(musicalAlphabet[one]);
-			progression.push(musicalAlphabet[five]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.four]);
+			progression.push(alphabet.musicalAlphabet[alphabet.five]);
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
+			progression.push(alphabet.musicalAlphabet[alphabet.five]);
 			break;
 		default:
 			console.log("Default hit in switch block!\n" +
