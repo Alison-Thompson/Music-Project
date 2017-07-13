@@ -1,12 +1,12 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="https://cdn.muicss.com/mui-0.9.17/css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link href="https://cdn.muicss.com/mui-0.9.17/css/mui.min.css" rel="stylesheet" type="text/css"/>
 		<script src="https://cdn.muicss.com/mui-0.9.17/js/mui.min.js"></script>
 		<style>
 		</style>
-		<link href="stylesheets/homepage.css" rel="stylesheet" type="text/css">
-		<title>PrestoHome</title>
+		<link href="stylesheets/SignUp.css" rel="stylesheet" type="text/css">
+		<title>PrestoSignUp</title>
 	</head>
 		<body>
 			<div id="wrapper">
@@ -19,6 +19,7 @@
 				</ul>
 					<img class=Logo src="Presto_Logo.png" alt="Presto" height="75" width="150">
 				<header>
+					<p>Presto is a website that is able to generate musical cord progressions for the user that both sound good and are based on the user's inputed genre, key and mode. This site is a song writing tool used to create new and intresting chord progressions. </p>
 				</header>
 				<div class="mui-container-fluid">
 				<div class="mui-row">
@@ -29,10 +30,22 @@
 				  <div class="mui-row">
 				    <div class="mui-col-md-12">
 				    	<div class="mui-panel">
-							<div class="flex-item">
-								<h3>Music-Project</h3>
-								<p>This is a project for Dixie State University's code school. The goal is to create a website that is able to generate musical chord progressions for the user that both sound good and are based on user's inputed genre, key, and mode. This site is to be a song writing tool that can create new and interesting chord progressions.</p>
-							</div>
+							<div class="flex-item">Login</div>
+							<form action="/action_page.php">
+	  						Username:<br>
+	  						<input type="text" name="username" value="Username">
+	  						<br>
+	  						Email:<br>
+	  						<input type="text" name="email" value="Email">
+	  						<br>
+	  						Password:<br>
+	 						<input type="text" name="password" value="Password">
+	 						<br>
+	 						Confirm Password: <br>
+	 						<input type="text" name="confirmation" value="Confirm Password">
+	 						<br><br>
+	  						<input type="submit" value="SignUp">
+							</form> 
 	  					</div>
 				    </div>
 				  </div>

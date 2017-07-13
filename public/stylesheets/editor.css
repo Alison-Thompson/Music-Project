@@ -1,0 +1,60 @@
+header{
+	background-color: lightgrey;
+	margin-left: 45%;
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: 25%;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.logo{
+	margin-left: 45%;
+}
+footer{
+	text-align: center;
+	color: #dbdbdb;
+	vertical-align: middle;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #2d2d2d;
+	margin: auto;
+	font-weight: bold;
+}
+
+.mui-col-md-4{
+	height: 500em;
+}
+
+.mui-container-fluid{
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+.mui-panel{
+	margin-right: auto;
+	max-width: 100%;
+	background-color: lightblue;
+	text-align: left;
+	padding-bottom: 350px
+}
+#wrapper{
+	margin-left: auto;
+	margin-right: auto;
+	background-color: lightgrey;
+	max-width: 960px;
+	max-height: 1000px;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li {
+	display:inline;
+}
+#home{
+	margin-left: 37%;
+}
+#editor{
+	margin-left: 38%;
+}

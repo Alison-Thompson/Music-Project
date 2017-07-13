@@ -39,7 +39,7 @@ classicalV2 = function (mode) { // In use. Generates a classical chord progressi
 				return progression;
 			}
 		}
-	} else if (mode.toLowerCase() === "minor") { // needs work.
+	} else if (mode.toLowerCase() === "minor") {
 		var options = [alphabet.musicalAlphabet[alphabet.seven], alphabet.musicalAlphabet[alphabet.three],
 				   alphabet.musicalAlphabet[alphabet.six]];
 
