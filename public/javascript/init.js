@@ -12,8 +12,8 @@ initalizeGenerators = function (genre, mode, key) {
 	}
 
 	if (genre === "classical") {
-		return createProgression(classicalV2(mode));
+		return classicalV2(mode);
 	} else if (genre === "blues") {
-		return createProgression(blues())
+		return blues()
 	}
 };

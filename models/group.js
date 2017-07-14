@@ -12,7 +12,8 @@ const groupSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: [true, 'An Group needs a user']
-    }
+    },
+    progression: [{}]
 })
 
 groupSchema.options.toJSON = {

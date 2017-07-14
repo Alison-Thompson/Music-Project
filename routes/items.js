@@ -25,13 +25,25 @@ router.get('/items/:id', function (req, res) {
     })
 })
 
+// Show items by group id
+// router.get('/items/:groupid', function (req, res) {
+//     Group.findOne({ 
+//         groupid: req.params.groupid
+//     }, function (err, user) {
+//         if (err) {
+//           res.json(err)
+//         } else {
+//           res.json(user)
+//         }
+//     })
+// }) 
+
 // Create
 router.post('/items', function (req, res) {
     const item = new Item({
         name: req.body.name,
         index: req.body.index,
-        groupId: req.body.groupId,
-        completed: req.body.completed
+        groupId: req.body.groupId
     })
     
     item.save()
@@ -44,8 +56,7 @@ router.put('/items/:id', function (req, res) {
     Item.findByIdAndUpdate(req.params.id, {
         name: req.body.name,
         index: req.body.index,
-        groupId: req.body.groupId,
-        completed: req.body.completed
+        groupId: req.body.groupId
     }, { new: true, runValidators: true }, function (err, item) {
         if (err) {
             res.json(err)

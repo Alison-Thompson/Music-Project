@@ -1,13 +1,21 @@
-createProgression = function (progression) {
-  var newProgression = [];
-  var currentChord;
+createProgression = function (progression, userId, name) { // progression and userId are
+	console.log("Creating progression...")     // required, name is optional.
 
-  for (var i = 0; i < progression.length; i++) {
-    // fetch to create chord
-    currentChord = new Chord(progression[i], 1) // id will be the created chords id
-    newProgression.push(currentChord)
-  }
+	if (name === undefined) {
+		name = "undefined"
+	}
 
-  // fetch to create new progression
-  return newProgression;
+	fetch("http://localhost:3000/groups", {
+		method: "POST",
+		headers: new Headers({
+			"Content-Type": "application/json"
+		}),
+		body: JSON.stringify({
+			progression: progression,
+			userId:      userId,
+			name:        name
+		})
+	}).then(function (response) {
+		console.log("Progression created, status " + response.status);
+	});
 };

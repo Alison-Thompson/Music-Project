@@ -24,6 +24,8 @@ var alphabet = function(){};
 // for soundManager.js
 
 var soundManager = function(){};
+var doSetTimeout = function(){};
+var PlaySound = function(){};
 
 // for progression.js
 

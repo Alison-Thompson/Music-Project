@@ -14,10 +14,6 @@ const itemSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Group',
         required: [true, 'An Item needs a group']
-    },
-    completed: {
-        type: Boolean,
-        default: false
     }
 })
 

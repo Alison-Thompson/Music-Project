@@ -15,21 +15,35 @@ router.get('/groups', function (req, res) {
 })
 
 // Show
-router.get('/groups/:id', function (req, res) {
-  Group.findById(req.params.id, function (err, group) {
-    if (err) {
-      res.json(err)
-    } else {
-      res.json(group)
-    }
-  })
+// router.get('/groups/:id', function (req, res) {
+//   Group.findById(req.params.id, function (err, group) {
+//     if (err) {
+//       res.json(err)
+//     } else {
+//       res.json(group)
+//     }
+//   })
+// })
+
+// get group by user id
+router.get('/groups/:userid', function (req, res) {
+    Group.findOne({ 
+        userid: req.params.userid
+    }, function (err, user) {
+        if (err) {
+          res.json(err)
+        } else {
+          res.json(user)
+        }
+    })
 })
 
 // Create
 router.post('/groups', function (req, res) {
   const group = new Group({
     name:   req.body.name,
-    userId: req.body.userId
+    userId: req.body.userId,
+    progression: req.body.progression
   })
 
   group.save(function (err) {
@@ -49,7 +63,8 @@ router.post('/groups', function (req, res) {
 router.put('/groups/:id', function (req, res) {
   Group.findByIdAndUpdate(req.params.id, {
     name:   req.body.name,
-    userId: req.body.userId
+    userId: req.body.userId,
+    progression: req.body.progression
     }, function (err, group) {
     if (err) {
       res.json(err)

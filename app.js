@@ -1,11 +1,12 @@
 const express       = require('express')
-const app           = express()
+
 const bodyParser    = require('body-parser')
 const mongoose      = require('mongoose')
 const passport      = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const cookieParser  = require('cookie-parser')
 const session       = require('express-session')
+const Auth0Strategy = require('passport-auth0') // test
 
 const items         = require('./routes/items')
 const groups        = require('./routes/groups')
@@ -13,6 +14,8 @@ const users         = require('./routes/users')
 const auth          = require('./routes/auth')
 
 const passportSetup = require('./config/passport')
+
+const app           = express()
 
 passportSetup(passport)
 
