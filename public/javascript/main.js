@@ -1,4 +1,4 @@
 $(document).ready(function() {
-	console.log(initalizeGenerators("classical","minor","d"));
-	console.log(initalizeGenerators("blues","major","f"));
+	console.log(initalizeGenerators("classical","minor","a"));
+	console.log(initalizeGenerators("rock","major","a"));
 });

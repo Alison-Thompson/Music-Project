@@ -16,6 +16,7 @@ var initalizeGenerators = function(){};
 var classicalV1 = function(){};
 var classicalV2 = function(){};
 var blues = function(){};
+var rock = function(){};
 
 // for alphabet.js
 
@@ -39,6 +40,16 @@ var Chord = function(){};
 
 var createProgression = function(){};
 
+// for createUser.js
+
+var createUser = function(){};
+
 // for loadProgression.js
 
 var loadProgression = function(){};
+
+// for generatorPage.js
+
+var generatorPage = function(){};
+
+

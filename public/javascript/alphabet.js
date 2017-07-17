@@ -66,5 +66,3 @@ Alphabet.prototype.removeMode = function () { // Removes the current mode.
 	this.musicalAlphabet[this.six]   = this.musicalAlphabet[this.six].charAt(0);
 	this.musicalAlphabet[this.seven] = this.musicalAlphabet[this.seven].charAt(0);
 };
-
-alphabet = new Alphabet();

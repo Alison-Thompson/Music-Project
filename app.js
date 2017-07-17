@@ -6,7 +6,6 @@ const passport      = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const cookieParser  = require('cookie-parser')
 const session       = require('express-session')
-const Auth0Strategy = require('passport-auth0') // test
 
 const items         = require('./routes/items')
 const groups        = require('./routes/groups')

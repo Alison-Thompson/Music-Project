@@ -1,4 +1,4 @@
-classicalV2 = function (mode) { // In use. Generates a classical chord progression.
+classicalV2 = function (mode, alphabet) { // In use. Generates a classical chord progression.
 	var progression = [];
 
 	if (mode.toLowerCase() === "major") {
@@ -82,7 +82,7 @@ classicalV2 = function (mode) { // In use. Generates a classical chord progressi
 	}
 };
 
-classicalV1 = function (mode) { // Not in use.
+classicalV1 = function (mode, alphabet) { // Not in use.
 	var progression = [];
 
 	if (mode === "major") {

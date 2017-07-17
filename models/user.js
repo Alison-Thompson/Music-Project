@@ -13,7 +13,7 @@ const userSchema = new Schema({
     },
     username: {
         type: String,
-        minlength: [6, 'Username needs at least 6 characters'],
+        minlength: [3, 'Username needs at least 3 characters'],
         maxlength: [30, 'Username cannot be more than 30 characters'],
         required: [true, 'A User needs a username'],
         unique: true,
@@ -33,7 +33,7 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        minlength: [6, 'Password not long enough']
+        minlength: [4, 'Password not long enough']
     },
     createdOn: {
         type: Date,
