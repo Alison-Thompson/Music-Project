@@ -1,61 +1,49 @@
-header{
-	background-color: lightgrey;
-	margin-left: 25%;
-	margin-right: 25%;
-	text-align: center;
-	background-position: left;
-	background-repeat: no-repeat;
-	background-size: 25%;
-	padding-top: 50px;
-	padding-bottom: 50px;
+#background {
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	z-index: -1;
 }
-.logo{
-	margin-left: 45%;
-}
-footer{
-	text-align: center;
-	color: #dbdbdb;
-	vertical-align: middle;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	background-color: #2d2d2d;
+
+#background img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	margin: auto;
-	font-weight: bold;
+	min-width: 50%;
+	min-height: 50%;
 }
 
-.mui-col-md-4{
-	height: 500em;
+#logo {
+	margin-left: calc(50% - 150px);
 }
 
-.mui-container-fluid{
-	margin-bottom: auto;
-	margin-top: auto;
+#form {
+	background-color: rgba(196, 207, 216, 0.5);
+	border: solid 7px #e1e1e1;
+	width: 465px;
+	height: 439px;
+	margin-top: 4em;
 }
 
-.mui-panel{
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 33%;
-	background-color: lightblue;
-	text-align: left;
+#login-button {
+	color: white;
+	margin-top: 6em;
+	margin-left: 11em;
 }
-#wrapper{
-	margin-left: auto;
-	margin-right: auto;
-	background-color: lightgrey;
-	max-width: 960px;
+
+#email {
+	margin-top: 2em;
 }
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+
+#password {
+	margin-top: 7em;
 }
-li {
-	display:inline;
-}
-#home{
-	margin-left: 37%;
-}
-#editor{
-	margin-left: 38%;
+
+#confirm-password {
+	margin-top: 7em;
 }

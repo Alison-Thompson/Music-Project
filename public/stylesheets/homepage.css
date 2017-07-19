@@ -1,60 +1,112 @@
-header{
-	background-color: lightgrey;
-	margin-left: 45%;
-	background-position: left;
-	background-repeat: no-repeat;
-	background-size: 25%;
-	padding-top: 100px;
-	padding-bottom: 100px;
-}
-.logo{
-	margin-left: 45%;
-}
-footer{
-	text-align: center;
-	color: #dbdbdb;
-	vertical-align: middle;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	background-color: #2d2d2d;
-	margin: auto;
-	font-weight: bold;
+body {
+    overflow-x: hidden;
 }
 
-.mui-col-md-4{
-	height: 500em;
+.discription {
+    background-color: #e4e4e4;
+    border: solid 1px #979797;
+    position: absolute;
+    top: 80%; /* Change later. */
+    right: 0px;
+    height: 28em;
+    padding: 1em;
+    font-family: Optima;
 }
 
-.mui-container-fluid{
-	margin-bottom: auto;
-	margin-top: auto;
+.logo {
+    position: absolute;
+    top: 10em;
+    font-family: Optima;
+    font-weight: bold;
 }
 
-.mui-panel{
-	margin-right: auto;
-	max-width: 100%;
-	background-color: lightblue;
-	text-align: left;
-	padding-bottom: 350px
+.girl {
+    width: 100%;
+    z-index: -1;
 }
-#wrapper{
-	margin-left: auto;
-	margin-right: auto;
-	background-color: lightgrey;
-	max-width: 960px;
-	max-height: 1000px;
+
+.guitarist {
+    width: 100%;
+    z-index: -1;
 }
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+footer {
+    text-align: center;
+    color: #dbdbdb;
+    vertical-align: middle;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: #323232;
+    margin: auto;
+    font-weight: bold;
 }
-li {
-	display:inline;
+
+.who {
+    position: absolute;
+    background-color: #313131;
+    color: #e4e4e4;
+    top: 84%;
+    height: 28em;
+    padding: 1em;
+    margin-left: calc(1em + 1px);
+    font-family: Optima;
 }
-#home{
-	margin-left: 37%;
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat,no-repeat;
+    background-size: 100% 100%, 100% 100%;
 }
-#editor{
-	margin-left: 38%;
+#home {
+    margin-left: 37%;
 }
+#editor {
+    margin-left: 38%;
+}
+
+.buttons {
+    position: absolute;
+    top: 0;
+}
+
+.sign-up {
+    position: absolute;
+    background-color: #d8d8d8;
+    border: solid 1px #979797;
+    top: 125%;
+    padding: 1em;
+    padding-top: 3.5em;
+    height: 10em;
+    text-align: center;
+    font-family: Optima;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+
+
+
+

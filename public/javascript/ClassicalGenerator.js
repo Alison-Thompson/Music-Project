@@ -36,6 +36,7 @@ classicalV2 = function (mode, alphabet) { // In use. Generates a classical chord
 				current = alphabet.musicalAlphabet[alphabet.one];
 			}
 			if ((current === alphabet.musicalAlphabet[alphabet.one]) && (progression.length > 8)) {
+				progression.push(alphabet.musicalAlphabet[alphabet.one]);
 				return progression;
 			}
 		}
@@ -76,6 +77,7 @@ classicalV2 = function (mode, alphabet) { // In use. Generates a classical chord
 			}
 
 			if ((current === alphabet.musicalAlphabet[alphabet.one]) && (progression.length > 8)) {
+				progression.push(alphabet.musicalAlphabet[alphabet.one]);
 				return progression;
 			}
 		}

@@ -63,6 +63,7 @@ rock = function (alphabet) {
 		}
 
 		if ((current === alphabet.musicalAlphabet[alphabet.one]) && (progression.length > 8)) {
+			progression.push(alphabet.musicalAlphabet[alphabet.one]);
 			return progression;
 		}
 	}
