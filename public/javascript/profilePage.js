@@ -20,7 +20,7 @@ profilePage = function (userId) {
 			var name = document.createElement("H1");
 			var nameText = document.createTextNode(currentName);
 			name.appendChild(nameText);
-			var progression = document.createElement("H3");
+			var progression = document.createElement("H4");
 			var progressionText = document.createTextNode(currentProgression);
 			progression.appendChild(progressionText);
 
@@ -30,5 +30,16 @@ profilePage = function (userId) {
 		}
 	});
 };
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    profilePage(user.uid);
+  } else {
+    // No user is signed in.
+    // redirect to login
+  }
+});
+
+
 
 // for testing 5967d6b8b91cd3039b3c57e3

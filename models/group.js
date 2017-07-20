@@ -9,7 +9,7 @@ const groupSchema = new Schema({
         required: [true, 'Name is required']
     },
     userId: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: 'User',
         required: [true, 'An Group needs a user']
     },

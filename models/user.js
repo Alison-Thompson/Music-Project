@@ -3,23 +3,16 @@ const Schema = mongoose.Schema
 const passportLocalMongoose = require('passport-local-mongoose')
 
 const userSchema = new Schema({
-    firstName: {
+
+    email: {
         type: String,
-        default: null,
-    },
-    lastName: {
-        type: String,
-        default: null
-    },
-    username: {
-        type: String,
-        minlength: [3, 'Username needs at least 3 characters'],
-        maxlength: [30, 'Username cannot be more than 30 characters'],
-        required: [true, 'A User needs a username'],
+        minlength: [3, 'Email needs at least 3 characters'],
+        maxlength: [30, 'Email cannot be more than 30 characters'],
+        required: [true, 'Email is required'],
         unique: true,
         validate: [
-            function (username, callback) {
-                User.findOne({ username: username}, function (err, user) {
+            function (email, callback) {
+                User.findOne({ email}, function (err, user) {
                     if (err) { console.log(err) }
                     if (user) {
                         callback(false)
@@ -28,12 +21,8 @@ const userSchema = new Schema({
                     }
                 })
             },
-            'Username already exists'
+            'Email already exists'
         ]
-    },
-    password: {
-        type: String,
-        minlength: [4, 'Password not long enough']
     },
     createdOn: {
         type: Date,
@@ -46,6 +35,14 @@ const userSchema = new Schema({
     deletedOn: {
         type: Date,
         default: null
+    },
+    _id: {
+      type: String,
+      default: null
+    },
+    username: {
+      type: String,
+      unique: false
     }
 })
 userSchema.options.toJSON = {

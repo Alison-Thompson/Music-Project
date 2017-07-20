@@ -6,16 +6,16 @@ header{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	vertical-align: text-top;
+	margin-bottom: 2em;
 }
 
 #empty{
-	border-radius: 50px
-}
-#empty:hover{
-	border-radius:200px;
+	border-radius: 200px;
+	border: 10px solid darkgrey;
+
 }
 .logo{
-	margin-left: 45%;
+	margin-left: 80%;
 }
 footer{
 	text-align: center;
@@ -28,10 +28,6 @@ footer{
 	font-weight: bold;
 }
 
-.mui-col-md-4{
-	height: 500em;
-}
-
 .mui-container-fluid{
 	margin-bottom: auto;
 	margin-top: auto;
@@ -40,26 +36,34 @@ footer{
 .mui-panel{
 	margin-right: auto;
 	max-width: 100%;
-	background-color: lightblue;
+	background-color: lightgrey;
 	text-align: left;
 }
 #wrapper{
 	margin-left: auto;
 	margin-right: auto;
-	background-color: lightgrey;
+	background-color: white;
 	max-width: 960px;
-}
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-li {
-	display:inline;
 }
 #home{
 	margin-left: 37%;
 }
 #editor{
 	margin-left: 38%;
+}
+#progressions-div{
+	text-align: center;
+	height: 420px;
+}
+h3{
+	margin-left: 12em;
+	margin-top: -5em;
+}
+#past{
+	text-align: center;
+	height: 420px;
+}
+#logout{
+	margin-left: 80%;
+	margin-top: -11em;
 }
