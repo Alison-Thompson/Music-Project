@@ -48,8 +48,10 @@ var createUser = function(){};
 
 var loadProgression = function(){};
 
-// for generatorPage.js
+// for profilePage.js
 
-var generatorPage = function(){};
+var profilePage = function(){};
+
+var check = function(){};
 
 
