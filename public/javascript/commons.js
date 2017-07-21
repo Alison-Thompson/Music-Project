@@ -52,6 +52,8 @@ var loadProgression = function(){};
 
 var profilePage = function(){};
 
-var check = function(){};
+var logout = function(){};
+
+var getProfileName = function(){};
 
 

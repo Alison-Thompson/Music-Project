@@ -22,3 +22,9 @@
     
   }
 // })
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.location.href = "http://localhost:3000/profile.html";
+  }
+});
