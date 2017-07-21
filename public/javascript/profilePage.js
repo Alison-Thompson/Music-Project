@@ -8,17 +8,6 @@ $(document).ready(function() {
 	    		var profileName = document.querySelector("#profile-name");
 	    		profileName.innerHTML = name;
 	    	});
-
-	    	/*$(".progression-div").click(function () {
-				console.log("clicked")
-				console.log($(".progression-div").css("background-color").toLowerCase())
-				if ($(".progression-div").css("background-color").toLowerCase() === "rgb(0, 0, 255)") {
-					$(".progression-div").css("background-color", "black");
-				} else {
-					$(".progression-div").css("background-color", "blue")
-				}
-			});*/
-
 	  	} else {
 	    	window.location.href = "http://localhost:3000/login.html";
 	  	}
@@ -27,6 +16,7 @@ $(document).ready(function() {
 
 	var buttonDiv = document.querySelector("#logout");
 	buttonDiv.onclick = logout;
+
 });
 
 profilePage = function (userId) {
@@ -44,10 +34,30 @@ profilePage = function (userId) {
 			newDiv.classList.add("progression-div")
 			newDiv.classList.add("progression-"+i);
 
+			newDiv.addEventListener("click", function (event) {
+				console.log(event.target.className);
+				var div = document.querySelector("."+event.target.className);
+
+				if (div.classList[2]) {
+					div.classList.remove("selected")
+				} else {
+					div.classList.add("selected");
+				}
+
+				for (var j = 0; j < progressions.length; i++) {
+					if ("progressions-"+j != "."+event.target.className) {
+						var testing = document.querySelector("progression-"+i)
+						if (testing.classList[2]) {
+							div.classList.remove("selected");
+						}
+					}
+				}
+			});
+
 
 			div.appendChild(newDiv);
 
-			div = document.querySelector(".progression-"+i)
+			newDiv = document.querySelector(".progression-"+i)
 
 
 			var name = document.createElement("H2");
@@ -55,10 +65,11 @@ profilePage = function (userId) {
 			name.appendChild(nameText);
 
 			name.classList.add("progression-"+i)
-			div.appendChild(name);
+			newDiv.appendChild(name);
 		}
 	});
 };
+
 
 logout = function() {
 	firebase.auth().signOut()

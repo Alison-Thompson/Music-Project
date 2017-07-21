@@ -74,3 +74,7 @@ h3{
 	box-shadow: 0px 3px 0px #b7b7b7;
 }
 
+.selected {
+	background-color: #a9c9fc;
+}
+
