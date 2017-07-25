@@ -56,4 +56,6 @@ var logout = function(){};
 
 var getProfileName = function(){};
 
+var divSizer = function(){};
+
 

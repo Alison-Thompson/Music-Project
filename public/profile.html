@@ -6,7 +6,7 @@
 		<style>
 		</style>
 		<link href="stylesheets/profile.css" rel="stylesheet" type="text/css">
-		<title>Progression Login</title>
+		<title>Presto Profile</title>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
@@ -38,16 +38,21 @@
 					<img class="Logo" src="resources/images/Presto2.png" alt="Presto" height="50" width="100">
 				</header>
 				  	<div class="mui-row">
-				    	<div class="mui-col-md-6">
+				    	<div class="mui-col-md-8">
 				    		<div class="mui-panel" id="progressions-div">
 								<div class="flex-item"></div>
 									<h4>New Progressions</h4>
-									<button class="mui-btn mui-btn--raised" id="play">New Progression</button>
+									<button class="mui-btn mui-btn--raised">New Progression</button>
 	  						</div>
 				    	</div>
-				  	<div class="mui-col-md-6">
+				  	<div class="mui-col-md-4">
 				  		<div class="mui-panel" id="past">
 				  		<h4>Past Progressions</h4>
+				  		<div id="buttons">
+					  		<img id="play" src="resources/images/PlayButton.png">
+					  		<h2 id="name">Selected</h2>
+					  		<img id="delete" src="resources/images/Delete.png">
+				  		</div>
 				  		<div id="progressions"></div>
 				  		</div>
 				  </div>

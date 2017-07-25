@@ -1,3 +1,8 @@
+body {
+	font-family: Optima;
+}
+
+
 header{
 	background-color: lightgrey;
 	background-position: left;
@@ -74,7 +79,50 @@ h3{
 	box-shadow: 0px 3px 0px #b7b7b7;
 }
 
+#buttons {
+	height: 3em;
+	background-color: white;
+	border-radius: 3px;
+	box-shadow: 0px 3px 0px #b7b7b7;
+}
+
+.progression-div:hover {
+	cursor: hand;
+}
+
+.Logo:hover {
+	cursor: hand;
+}
+
+#play:hover {
+	cursor: hand;
+}
+#delete:hover {
+	cursor: hand;
+}
+
 .selected {
 	background-color: #a9c9fc;
 }
+
+#play {
+	height: calc(3em - 20px);
+	width: calc(3em - 20px);
+	float: left;
+}
+
+#delete {
+	height: calc(3em - 20px);
+	width: calc(3em - 20px);
+	float: right;
+}
+#name {
+	text-algin: center;
+	width: 80%
+}
+
+
+
+
+
 
