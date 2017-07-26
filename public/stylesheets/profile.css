@@ -58,7 +58,8 @@ footer{
 }
 #progressions-div{
 	text-align: center;
-	height: 100%;
+	height: 402px;
+
 }
 h3{
 	margin-left: 12em;
@@ -101,10 +102,6 @@ h3{
 	cursor: hand;
 }
 
-.selected {
-	background-color: #a9c9fc;
-}
-
 #play {
 	height: calc(3em - 20px);
 	width: calc(3em - 20px);
@@ -121,6 +118,38 @@ h3{
 	width: 80%
 }
 
+.progressionBut {
+	width: 100%;
+	
+}
+
+.mui-btn+.mui-btn {
+	margin-left: 0;
+}
+
+.buttonRow {
+	margin-bottom: auto;
+	position: relative;
+	top: 25%;
+	bottom: 25%;
+	line-height: 1.5em;
+}
+
+#playButtonTitle {
+	font-size: 1.5em
+}
+
+#progressions {
+	padding-top: 25px;
+}
+
+#play-button {
+	padding-left: 4px;
+}
+
+#delete-button {
+	padding-right: 4px;
+}
 
 
 

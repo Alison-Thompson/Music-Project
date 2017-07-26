@@ -27,7 +27,12 @@ $(document).ready(function() {
 
 profilePage = function (userId) {
 	loadProgression(userId, function (progressions) {
+		// size right div
 
+		divSizer(progressions);
+
+
+		// make progression names
 		var currentName;
 		var currentProgression;
 		var div = document.querySelector("#progressions")
@@ -36,47 +41,48 @@ profilePage = function (userId) {
 
 			currentName = progressions[i].name;
 
-			var newDiv = document.createElement("DIV");
-			newDiv.classList.add("progression-div")
-			newDiv.classList.add("progression-"+i);
+			var newDiv = document.createElement("BUTTON");
+			newDiv.classList.add("mui-btn");
+			newDiv.classList.add("mui-btn--raised")
+			newDiv.classList.add("progressionBut")
+			newDiv.classList.add("progression-"+i)
+			var newDivNode = document.createTextNode(currentName);
+			newDiv.appendChild(newDivNode)
+			div.appendChild(newDiv);
 
+			// event listener
 			newDiv.addEventListener("click", function (event) {
+				// makes so only one can be selected at a time
+
+				var div = document.querySelector("."+event.target.classList[3]);
 
 				for (var j = 0; j < progressions.length; j++) {
 					var testing = document.querySelector(".progression-"+j);
-					if ((testing.classList[2]) &&
+					if ((testing.classList[4]) &&
 					(testing.classList[1] != event.target.className)) {
-						testing.classList.remove("selected")
+						testing.classList.remove("mui-btn--primary");
+						testing.classList.remove("selected");
 					}
 				}
 
-				console.log(event.target.className);
-				var div = document.querySelector("."+event.target.className);
-
-				if (div.classList[2]) {
+				// make selection work
+				console.log(event.target.classList[4]);
+				
+			
+				if (div.classList[4]) {
+					console.log("remove")
+					div.classList.remove("mui-btn--primary");
 					div.classList.remove("selected");
-					// var selectedDiv = document.querySelector("#name");
-					// selectedDiv.innerHTML = "Selected"
 				} else {
+					console.log("add")
+					div.classList.add("mui-btn--primary");
 					div.classList.add("selected");
-					// var selectedDiv = document.querySelector("#name");
-					// selectedDiv.innerHTML = div.innerHTML;
+
+					var name = document.querySelector("#name");
+					name.innerHTML = event.target.innerHTML.toUpperCase();
 				}
 
-			});
-
-
-			div.appendChild(newDiv);
-
-			newDiv = document.querySelector(".progression-"+i)
-
-
-			var name = document.createElement("H2");
-			var nameText = document.createTextNode(currentName);
-			name.appendChild(nameText);
-
-			name.classList.add("progression-"+i)
-			newDiv.appendChild(name);
+			}); // end of event listener
 		}
 	});
 	// playbutton stuff
@@ -89,18 +95,51 @@ profilePage = function (userId) {
 
 			for (var j = 0; j < progressions.length; j++) {
 				var testing = document.querySelector(".progression-"+j);
-				if (testing.classList[2]) {
-					progressionClass = testing.classList[1];
+				if (testing.classList[5]) {
+					progressionClass = testing.classList[3];
 				}
+			}
+
+			if (!(progressionClass)) {
+				alert("Select a progression first.")
 			}
 
 			for (var i = 12; i < progressionClass.length; i++) {
 				progressionIndex += progressionClass[i];
 			}
 
-			console.log(progressions[progressionIndex].progression);
+			console.log(progressions);
+			console.log(progressionIndex);
 			SoundManager(progressions[progressionIndex].progression);
 
+		});
+	});
+	// delete button stuff
+
+	var deleteButton = document.querySelector("#delete");
+	deleteButton.addEventListener("click", function (event) {
+		var user = firebase.auth().currentUser.uid;
+		loadProgression(user, function (progressions) {
+			var progressionClass;
+			var progressionIndex = "";
+
+			for (var j = 0; j < progressions.length; j++) {
+				var testing = document.querySelector(".progression-"+j);
+				if (testing.classList[5]) {
+					progressionClass = testing.classList[3];
+				}
+			}
+
+			if (!(progressionClass)) {
+				alert("Select a progression first.")
+			}
+
+			for (var i = 12; i < progressionClass.length; i++) {
+				progressionIndex += progressionClass[i];
+			}
+
+			progressions[progressionIndex].deleteProgression();
+			location.reload();
 		});
 	});
 };
