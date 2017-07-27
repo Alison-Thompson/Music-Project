@@ -142,6 +142,90 @@ profilePage = function (userId) {
 			location.reload();
 		});
 	});
+
+	var classical = document.querySelector("#classical");
+	classical.addEventListener("click", function (event) {
+		var genre = document.querySelector(".genre-span");
+		console.log(genre.innerHTML)
+		genre.innerHTML = 'Classical';
+	});
+
+	var rock = document.querySelector("#rock");
+	rock.addEventListener("click", function (event) {
+		var genre = document.querySelector(".genre-span");
+		console.log(genre.innerHTML)
+		genre.innerHTML = 'Rock';
+	});
+
+	var blues = document.querySelector("#blues");
+	blues.addEventListener("click", function (event) {
+		var genre = document.querySelector(".genre-span");
+		console.log(genre.innerHTML)
+		genre.innerHTML = 'Blues';
+	});
+
+	var major = document.querySelector("#major");
+	major.addEventListener("click", function (event) {
+		var mode = document.querySelector(".mode-span");
+		console.log(mode.innerHTML)
+		mode.innerHTML = 'Major';
+	});
+
+		var minor = document.querySelector("#minor");
+	minor.addEventListener("click", function (event) {
+		var mode = document.querySelector(".mode-span");
+		console.log(mode.innerHTML)
+		mode.innerHTML = 'Minor';
+	});
+
+		var a = document.querySelector("#a");
+	a.addEventListener("click", function (event) {
+		var key = document.querySelector(".key-span");
+		console.log(key.innerHTML)
+		key.innerHTML = 'A';
+	});
+
+		var b = document.querySelector("#b");
+	b.addEventListener("click", function (event) {
+		var key = document.querySelector(".key-span");
+		console.log(key.innerHTML)
+		key.innerHTML = 'B';
+	});
+
+		var c = document.querySelector("#c");
+	c.addEventListener("click", function (event) {
+		var key = document.querySelector(".key-span");
+		console.log(key.innerHTML)
+		key.innerHTML = 'C';
+	});
+
+		var d = document.querySelector("#d");
+	d.addEventListener("click", function (event) {
+		var key = document.querySelector(".key-span");
+		console.log(key.innerHTML)
+		key.innerHTML = 'D';
+	});
+
+	var e = document.querySelector("#e");
+	e.addEventListener("click", function (event) {
+		var key = document.querySelector(".key-span");
+		console.log(key.innerHTML)
+		key.innerHTML = 'E';
+	});
+
+	var f = document.querySelector("#f");
+	f.addEventListener("click", function (event) {
+		var key = document.querySelector(".key-span");
+		console.log(key.innerHTML)
+		key.innerHTML = 'F';
+	});
+
+	var g = document.querySelector("#g");
+	g.addEventListener("click", function (event) {
+		var key = document.querySelector(".key-span");
+		console.log(key.innerHTML)
+		key.innerHTML = 'G';
+	});
 };
 
 
@@ -162,7 +246,7 @@ getProfileName = function (user, callback) {
 };
 
 divSizer = function(progressionList) {
-  var baseHeight = 402;
+  var baseHeight = 502;
   var listDiff = progressionList.length - 7;
   var pastDiv = document.querySelector("#past");
   var progressionsDiv = document.querySelector("#progressions-div");
