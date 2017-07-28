@@ -12,7 +12,15 @@
 
 		<script src="javascript/commons.js"></script>
 
+		<script src="javascript/init.js"></script>
+
+		<script src="javascript/alphabet.js"></script>
+		<script src="javascript/BluesGenerator.js"></script>
+		<script src="javascript/ClassicalGenerator.js"></script>
+		<script src="javascript/RockGenerator.js"></script>
+
 		<script src="javascript/loadProgression.js"></script>
+		<script src="javascript/createProgression.js"></script>
 		<script src="javascript/progression.js"></script>
 
 		<script src="javascript/soundManager.js"></script>
@@ -81,19 +89,26 @@
 										</div>
 									<br>
 									</div>
+									<div id="generated-progression"></div>
 									<button id="generate" class="mui-btn mui-btn--raised">Generate</button>
 								<div>
-									<div class="mui-col-md-12" id="player">
-										<div>
-										<img class="playbutton" src="resources/images/PlayButton.png" alt="PlayButton" height="50" width="50">
-										
-										<img class="save" src="resources/images/Save.png" alt="Save" height="50" width="50">
-										</div>
-										<div>
-											<label>Insert Name</label>
-    										<input type="text" id="name-insert">
- 										</div>
-									</div>
+									<div class="mui-row buttonRow genre" id="genPlayer">
+  				  				<div class="mui-col-md-1">
+  						  			<div class="playButton">
+  							  			<img id="playButton" src="resources/images/PlayButton2.png">
+  							  		</div>
+  							  	</div>
+  							  	<div class="mui-col-md-10" id="playButtonInput">
+                      				<div>
+      										<input type="text" id="name-insert" placeholder="Progression name">
+   										</div>
+  							  	</div>
+  							  	<div class="mui-col-md-1">
+  							  		<div id="save-button">
+  							  			<img id="save" src="resources/images/Save2.png">
+  							  		</div>
+  							  	</div>
+  				  		  </div>
 								</div>
 				    	</div>							
 	  				</div>
@@ -101,7 +116,6 @@
 
 
 				  		<div class="mui-panel" id="past">
-				  		<h4>Past Progressions</h4>
 				  		<div id="buttons">
 				  			<div class="mui-row buttonRow">
 				  				<div class="mui-col-md-3">

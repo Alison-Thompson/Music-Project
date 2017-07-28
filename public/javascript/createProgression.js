@@ -2,7 +2,7 @@ createProgression = function (progression, userId, name) { // progression and us
 	console.log("Creating progression...")     // required, name is optional.
 
 	if (name === undefined) {
-		name = "undefined"
+		name = "Unnamed"
 	}
 
 	fetch("http://localhost:3000/groups", {

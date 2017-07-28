@@ -15,7 +15,7 @@ $(document).ready(function() {
 	    	}
 
 	  	} else {
-	    	window.location.href = "http://localhost:3000/login.html";
+	    	window.location.href = "http://localhost:3000/";
 	  	}
 	});
 
@@ -108,11 +108,25 @@ profilePage = function (userId) {
 				progressionIndex += progressionClass[i];
 			}
 
-			console.log(progressions);
-			console.log(progressionIndex);
-			SoundManager(progressions[progressionIndex].progression);
-
+			SoundManager(progressions[progressionIndex].progression[0]);
 		});
+	});
+
+	// play button number 2
+
+	var playButton2 = document.querySelector(".playbutton")
+	playButton2.addEventListener("click", function (event) {
+		var prog = document.querySelector("#generated-progression").innerHTML;
+
+		if (prog === "") {
+			alert("Please generate a progression first!");
+			return;
+		}
+
+		var array = prog.split(" ");
+		array.pop();
+
+		SoundManager(array);
 	});
 	// delete button stuff
 
@@ -142,89 +156,143 @@ profilePage = function (userId) {
 			location.reload();
 		});
 	});
+	// save button stuff
+
+	var saveButton = document.querySelector("#save");
+	saveButton.addEventListener("click", function (event) {
+		var prog = document.querySelector("#generated-progression").innerHTML;
+
+		if (prog === "") {
+			alert("Please generate a progression first!");
+			return;
+		}
+
+		var array = prog.split(" ");
+		array.pop();
+
+		var user = firebase.auth().currentUser.uid;
+		var name = document.querySelector("#name-insert").value;
+
+		if (name === "") {
+			name = undefined;
+		}
+
+		createProgression(prog, user, name);
+		location.reload();
+
+	});
 
 	var classical = document.querySelector("#classical");
 	classical.addEventListener("click", function (event) {
 		var genre = document.querySelector(".genre-span");
-		console.log(genre.innerHTML)
 		genre.innerHTML = 'Classical';
 	});
 
 	var rock = document.querySelector("#rock");
 	rock.addEventListener("click", function (event) {
 		var genre = document.querySelector(".genre-span");
-		console.log(genre.innerHTML)
 		genre.innerHTML = 'Rock';
 	});
 
 	var blues = document.querySelector("#blues");
 	blues.addEventListener("click", function (event) {
 		var genre = document.querySelector(".genre-span");
-		console.log(genre.innerHTML)
 		genre.innerHTML = 'Blues';
 	});
 
 	var major = document.querySelector("#major");
 	major.addEventListener("click", function (event) {
 		var mode = document.querySelector(".mode-span");
-		console.log(mode.innerHTML)
 		mode.innerHTML = 'Major';
 	});
 
-		var minor = document.querySelector("#minor");
+	var minor = document.querySelector("#minor");
 	minor.addEventListener("click", function (event) {
 		var mode = document.querySelector(".mode-span");
-		console.log(mode.innerHTML)
 		mode.innerHTML = 'Minor';
 	});
 
-		var a = document.querySelector("#a");
+	var a = document.querySelector("#a");
 	a.addEventListener("click", function (event) {
 		var key = document.querySelector(".key-span");
-		console.log(key.innerHTML)
 		key.innerHTML = 'A';
 	});
 
-		var b = document.querySelector("#b");
+	var b = document.querySelector("#b");
 	b.addEventListener("click", function (event) {
 		var key = document.querySelector(".key-span");
-		console.log(key.innerHTML)
 		key.innerHTML = 'B';
 	});
 
-		var c = document.querySelector("#c");
+	var c = document.querySelector("#c");
 	c.addEventListener("click", function (event) {
 		var key = document.querySelector(".key-span");
-		console.log(key.innerHTML)
 		key.innerHTML = 'C';
 	});
 
-		var d = document.querySelector("#d");
+	var d = document.querySelector("#d");
 	d.addEventListener("click", function (event) {
 		var key = document.querySelector(".key-span");
-		console.log(key.innerHTML)
 		key.innerHTML = 'D';
 	});
 
 	var e = document.querySelector("#e");
 	e.addEventListener("click", function (event) {
 		var key = document.querySelector(".key-span");
-		console.log(key.innerHTML)
 		key.innerHTML = 'E';
 	});
 
 	var f = document.querySelector("#f");
 	f.addEventListener("click", function (event) {
 		var key = document.querySelector(".key-span");
-		console.log(key.innerHTML)
 		key.innerHTML = 'F';
 	});
 
 	var g = document.querySelector("#g");
 	g.addEventListener("click", function (event) {
 		var key = document.querySelector(".key-span");
-		console.log(key.innerHTML)
 		key.innerHTML = 'G';
+	});
+
+	var generator = document.querySelector("#generate")
+	generator.addEventListener("click", function (event) {
+		var genre = document.querySelector(".genre-span");
+		var mode  = document.querySelector(".mode-span");
+		var key   = document.querySelector(".key-span");
+
+		var flag = false;
+
+		if (genre.innerHTML === "Genre") {
+			alert("Please select a Genre!");
+			flag = true;
+		}
+
+		if ((mode.innerHTML === "Mode") && !(flag)) {
+			alert("Please select a Mode!");
+			flag = true;
+		}
+
+		if ((key.innerHTML === "Key") && !(flag)) {
+			alert("Please select a Key!");
+			flag = true;
+		}
+
+		if (flag) {
+			return;
+		}
+
+		// generation
+
+		var target = document.querySelector("#generated-progression");
+
+		var array = initalizeGenerators(genre.innerHTML, mode.innerHTML, key.innerHTML);
+		var string = "";
+
+		for (var i = 0; i < array.length; i++) {
+			string += array[i] + " ";
+		}
+
+		target.innerHTML = string;
 	});
 };
 

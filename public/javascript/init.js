@@ -12,11 +12,11 @@ initalizeGenerators = function (genre, mode, key) {
 		alphabet.changeAlphabetToMode(mode);
 	}
 
-	if (genre === "classical") {
+	if (genre.toLowerCase() === "classical") {
 		return classicalV2(mode, alphabet);
-	} else if (genre === "blues") {
+	} else if (genre.toLowerCase() === "blues") {
 		return blues(alphabet);
-	} else if (genre === "rock") {
+	} else if (genre.toLowerCase() === "rock") {
 		return rock(alphabet);
 	}
 };

@@ -1,17 +1,20 @@
 body {
 	font-family: Optima;
+	overflow-x: hidden;
 }
 
 
 header{
-	background-color: lightgrey;
-	background-position: left;
+	/*background-color: lightgrey;
+	background-position: left;*/
 	background-repeat: no-repeat;
-	background-size: 25%;
+	background-size: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	vertical-align: text-top;
 	margin-bottom: 2em;
+	background-image: linear-gradient(rgba(205,217,223,0.6),rgba(205,217,223,0.6)),url("../resources/images/string.jpg");
+
 }
 
 #empty{
@@ -41,14 +44,14 @@ footer{
 .mui-panel{
 	margin-right: auto;
 	max-width: 100%;
-	background-color: lightgrey;
+	background-color: #E4e4e4;
 	text-align: left;
 }
 #wrapper{
 	margin-left: auto;
 	margin-right: auto;
-	background-color: white;
 	max-width: 960px;
+	background-image: url("../resources/images/guitarist2.jpg");
 }
 #home{
 	margin-left: 37%;
@@ -59,8 +62,10 @@ footer{
 #progressions-div{
 	text-align: center;
 	height: 502px;
-
+	background-image: url("../resources/images/crowd.jpg");
+	background-size: auto 100%;
 }
+
 h3{
 	margin-left: 12em;
 	margin-top: -5em;
@@ -68,6 +73,7 @@ h3{
 #past{
 	text-align: center;
 	height: 502px;
+	background-color: #cdd9df;
 }
 #logout{
 	margin-left: 80%;
@@ -268,28 +274,69 @@ ul{
 	cursor: hand;
 }
 #generate{
-	margin-top: 11em;
+	margin-top: 8em;
 }
 #player{
 	background-color: #3a3a3a;
 	color: #f9f9f9;
 	text-align: center;
 }
-.playbutton{
+#playbutton{
+	height: calc(3em - 20px);
+	width: calc(3em - 20px);
 }
 .save{
 	margin-left: 22em;
 }
+#save:hover{
+	cursor: hand;
+}
 .playbutton:hover{
 	cursor: hand;
 }
-.save:hover{
+.save-button:hover{
 	cursor: hand;
 }
 #name-insert{
 	width: 200px;
 }
 
+/* For generated progression */
+
+#generated-progression {
+	margin-top: 5em;
+	font-size: 2.5em;
+	text-align: center;
+	word-spacing: 6px;
+	height: 100px;
+}
+
+/* chris */
+
+#genPlayer{
+	background-color: #3a3a3a;
+	color: #f9f9f9;
+	text-align: center;
+	width: 90%;
+}
+
+#save-button {
+  	padding-right: 4px;
+  }
+
+#playButton{
+    padding-left: 4px;
+}
+
+#playButtonInput {
+  	font-size: 1.5em
+}
+
+#save {
+  	height: calc(3em - 20px);
+  	width: calc(3em - 20px);
+  	float: right;
+}
 
 
 
